@@ -53,3 +53,15 @@ if (form) {
     btn.disabled = false;
   });
 }
+
+// Custom cursor
+const cur = document.querySelector('.cursor');
+if (cur && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  let x = 0, y = 0, cx = 0, cy = 0;
+  addEventListener('mousemove', (e) => { x = e.clientX; y = e.clientY; }, { passive: true });
+  (function loop() { cx += (x - cx) * 0.22; cy += (y - cy) * 0.22; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.card,.prod,.what-card').forEach((el) => {
+    el.addEventListener('mouseenter', () => cur.classList.add('big'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+  });
+}
