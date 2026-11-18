@@ -1,6 +1,6 @@
 :root{
-  --bg:#0b0b0c; --bg2:#121214; --fg:#f2efe9; --mute:#8d8a84; --line:rgba(242,239,233,.12);
-  --accent:#d9c7a3;
+  --bg:#f7f4ef; --bg2:#ece7de; --fg:#1a1917; --mute:#6b665e; --line:rgba(26,25,23,.14);
+  --accent:#9a7440;
   --serif:'Cormorant Garamond','Noto Sans KR',serif;
   --sans:'Inter','Noto Sans KR',system-ui,sans-serif;
   --pad:clamp(20px,4vw,64px);
@@ -15,12 +15,12 @@ em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--accent
 h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.01em}
 h2{font-size:clamp(34px,5vw,72px)}
 
-.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;
+.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);transition:.4s;mix-blend-mode:normal}
-.nav.solid{background:rgba(11,11,12,.72);backdrop-filter:blur(14px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.nav.solid{background:rgba(247,244,239,.82);backdrop-filter:blur(14px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .logo{font-family:var(--serif);font-size:26px;letter-spacing:.28em;font-weight:400}
 .logo span{font-size:11px;vertical-align:super;margin-left:2px;color:var(--accent)}
 .nav nav{display:flex;gap:34px;align-items:center;font-size:13px;letter-spacing:.08em}
@@ -32,8 +32,8 @@ h2{font-size:clamp(34px,5vw,72px)}
 /* HERO */
 .hero{min-height:100vh;padding:0 var(--pad) 48px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
 .hero-orb{position:absolute;right:-8vw;top:8vh;width:min(60vw,760px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#f3e6c8 0%,#c9a977 28%,#6b4f3a 60%,transparent 72%);
-  filter:blur(40px);opacity:.55;animation:float 14s ease-in-out infinite}
+  background:radial-gradient(circle at 35% 30%,#fff3dc 0%,#f0cfa0 30%,#e7a98a 58%,transparent 72%);
+  filter:blur(50px);opacity:.7;animation:float 14s ease-in-out infinite}
 @keyframes float{50%{transform:translate(-3vw,3vh) scale(1.06)}}
 .hero-title{font-size:clamp(52px,11.5vw,190px);line-height:.95;position:relative;margin-bottom:56px}
 .line{display:block;overflow:hidden;padding-bottom:.06em}
@@ -68,8 +68,8 @@ section{padding:clamp(90px,12vw,170px) var(--pad)}
 .card:hover .art{transform:scale(1.06)}
 .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.72))}
 .meta{position:absolute;left:28px;right:28px;bottom:26px;z-index:2}
-.meta span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-.meta h3{font-size:clamp(28px,3vw,44px);margin:6px 0 4px}
+.meta span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e6cf9f}
+.meta h3{color:#fff;font-size:clamp(28px,3vw,44px);margin:6px 0 4px}
 .meta p{color:#c9c6bf;font-size:14px}
 
 .c6,.c7,.c8{grid-column:span 4;min-height:460px}
@@ -176,7 +176,7 @@ footer a:hover{color:var(--fg)}
 
 /* HERO PHOTO */
 .hero-photo{position:absolute;right:var(--pad);top:15vh;width:min(26vw,380px);z-index:1;opacity:0;animation:fade 1.6s .5s ease forwards}
-.hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;display:block;border-radius:2px;box-shadow:0 40px 90px rgba(0,0,0,.55);will-change:transform}
+.hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;display:block;border-radius:2px;box-shadow:0 40px 80px rgba(60,40,20,.22);will-change:transform}
 .hero-photo figcaption{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-top:14px;line-height:1.8}
 .hero-photo i{color:var(--accent);font-style:normal}
 @keyframes fade{to{opacity:1}}
@@ -205,3 +205,31 @@ footer a:hover{color:var(--fg)}
 .status.err{color:#e58a8a}
 .contact-grid{grid-template-columns:repeat(2,1fr)}
 @media(max-width:700px){.form .row{grid-template-columns:1fr}}
+
+/* LIGHT THEME + CLARITY */
+body{font-weight:400}
+.hero-title{font-size:clamp(44px,7.4vw,124px);line-height:1.08}
+.hero-title .ko{font-family:'Noto Sans KR',sans-serif;font-weight:300;letter-spacing:-.03em}
+.hero-sub{font-size:clamp(16px,1.5vw,20px);color:var(--fg);max-width:620px;margin-bottom:28px;position:relative;line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;position:relative}
+.chips span{border:1px solid var(--fg);border-radius:99px;padding:8px 18px;font-size:13px;letter-spacing:.04em;background:rgba(255,255,255,.5)}
+.hero-foot p{color:var(--mute)}
+.scroll i{background:var(--fg)}
+.marquee{background:var(--fg);color:var(--bg);border:0}
+.track b{color:#d9b97f}
+.what{padding-bottom:0}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
+.what-card{background:var(--bg2);border-radius:4px;padding:clamp(26px,3vw,44px);display:flex;flex-direction:column;gap:14px;min-height:300px;transition:.5s}
+.what-card:hover{background:var(--fg);color:var(--bg)}
+.what-card:hover p,.what-card:hover small{color:#cfc9bf}
+.what-card .n{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--accent)}
+.what-card h3{font-size:clamp(28px,2.6vw,40px);font-family:'Noto Sans KR',var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.2}
+.what-card p{color:var(--mute);font-size:15.5px}
+.what-card small{margin-top:auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:900px){.what-grid{grid-template-columns:1fr}.what-card{min-height:0}}
+.submit:hover{background:var(--accent);color:#fff}
+.mail:hover{color:var(--accent)}
+.hero{padding-top:110px}
+.hero-title{font-size:clamp(34px,5.4vw,88px);line-height:1.15;margin-bottom:30px;max-width:62vw}
+.hero .eyebrow{margin-bottom:22px}
+@media(max-width:900px){.hero-title{max-width:none;font-size:clamp(32px,8.4vw,60px)}.hero-photo{display:none}}
