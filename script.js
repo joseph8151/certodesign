@@ -41,11 +41,6 @@ if (form) {
   const btn = form.querySelector('.submit');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (form.action.includes('xppddndy')) {
-      status.className = 'status err';
-      status.textContent = 'Formspree 폼 ID가 아직 설정되지 않았습니다.';
-      return;
-    }
     btn.disabled = true; status.className = 'status'; status.textContent = '전송 중...';
     try {
       const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
