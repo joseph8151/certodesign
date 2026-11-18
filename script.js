@@ -65,3 +65,22 @@ if (cur && matchMedia('(hover:hover) and (pointer:fine)').matches) {
     el.addEventListener('mouseleave', () => cur.classList.remove('big'));
   });
 }
+
+// Scroll progress
+const bar = document.querySelector('.progress');
+if (bar) addEventListener('scroll', () => {
+  const m = document.documentElement.scrollHeight - innerHeight;
+  bar.style.width = (m > 0 ? scrollY / m * 100 : 0) + '%';
+}, { passive: true });
+
+// Service hover image preview
+const pv = document.querySelector('.preview');
+if (pv && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  let px = 0, py = 0, qx = 0, qy = 0;
+  addEventListener('mousemove', (e) => { px = e.clientX + 40; py = e.clientY; }, { passive: true });
+  (function mv() { qx += (px - qx) * 0.16; qy += (py - qy) * 0.16; pv.style.left = qx + 'px'; pv.style.top = qy + 'px'; requestAnimationFrame(mv); })();
+  document.querySelectorAll('.list li[data-img]').forEach((li) => {
+    li.addEventListener('mouseenter', () => { pv.style.backgroundImage = 'url(' + li.dataset.img + ')'; pv.classList.add('on'); });
+    li.addEventListener('mouseleave', () => pv.classList.remove('on'));
+  });
+}

@@ -338,3 +338,53 @@ footer address b{color:var(--fg);font-weight:600}
 .track{gap:38px;font-family:'Inter','Pretendard Variable',sans-serif;font-style:normal;font-weight:500;font-size:clamp(22px,2.9vw,42px);letter-spacing:.06em;text-transform:uppercase;align-items:center}
 .track span:nth-of-type(even){color:transparent;-webkit-text-stroke:1px rgba(247,244,239,.85)}
 .track b{font-size:0;width:2px;height:34px;background:#d9b97f;transform:skewX(-22deg);align-self:center;opacity:.9}
+
+/* MORE CONTENT */
+.step small{display:block;margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;letter-spacing:.04em;color:var(--fg);opacity:.7}
+.tags{display:flex;flex-wrap:wrap;gap:12px}
+.tags li{border:1px solid var(--fg);padding:12px 22px;font-size:15px;transition:.3s}
+.tags li:hover{background:var(--fg);color:var(--bg)}
+.clients{background:var(--bg2)}
+.cl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.4vw,40px)}
+.cl-grid>div{border-top:1px solid var(--fg);padding-top:22px}
+.cl-grid span{font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent);font-size:28px}
+.cl-grid h3{font-family:'Pretendard Variable',sans-serif;font-weight:600;font-size:21px;letter-spacing:-.03em;margin:12px 0}
+.cl-grid p{color:var(--mute);font-size:15px;line-height:1.75}
+.faq-list{max-width:900px;border-top:1px solid var(--fg)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:26px 0;font-size:clamp(17px,1.6vw,22px);font-weight:500;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:'Instrument Serif',serif;font-size:30px;line-height:1;color:var(--accent);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 28px;color:var(--mute);max-width:720px;line-height:1.8}
+@media(max-width:900px){.cl-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cl-grid{grid-template-columns:1fr}}
+
+/* UPGRADE 2 */
+.intro{position:fixed;inset:0;z-index:100;background:#0b1730;color:#f3efe8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;animation:introOut 1.1s cubic-bezier(.76,0,.24,1) 1.5s forwards;pointer-events:none}
+.intro span{font-family:'Instrument Serif',serif;font-size:clamp(44px,9vw,120px);letter-spacing:.3em;margin-right:-.3em;opacity:0;animation:introIn .9s ease .1s forwards}
+.intro i{display:block;width:120px;height:1px;background:#d9b97f;transform:scaleX(0);transform-origin:left;animation:introLine 1s ease .3s forwards}
+@keyframes introIn{to{opacity:1}}
+@keyframes introLine{to{transform:scaleX(1)}}
+@keyframes introOut{to{transform:translateY(-100%);visibility:hidden}}
+.line span{animation-delay:2.0s!important}
+.line:nth-child(2) span{animation-delay:2.15s!important}
+.hero-photo{animation-delay:2.2s}
+.hero-photo img{clip-path:inset(0 0 100% 0);animation:clipIn 1.4s cubic-bezier(.7,0,.2,1) 2.2s forwards}
+@keyframes clipIn{to{clip-path:inset(0)}}
+.progress{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,#d9b97f,#9a7440);z-index:70}
+.nav nav a:not(.pill)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.nav nav a:not(.pill):hover::after{transform:scaleX(1);transform-origin:left}
+.preview{position:fixed;left:0;top:0;width:300px;height:380px;background-size:cover;background-position:center;z-index:45;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .3s,transform .4s;box-shadow:0 30px 70px rgba(10,20,45,.35)}
+.preview.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media(hover:none){.preview{display:none}}
+.list li{cursor:pointer}
+.faq{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px);align-items:start}
+.faq .section-head{position:sticky;top:110px;margin:0}
+.faq-list{max-width:none}
+@media(max-width:900px){.faq{grid-template-columns:1fr}.faq .section-head{position:static;margin-bottom:40px}}
+.card .meta h3{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .meta h3{transform:translateX(10px)}
+.card::before{content:"VIEW \2197";position:absolute;right:22px;top:20px;z-index:3;color:#fff;font-size:11px;letter-spacing:.2em;border:1px solid rgba(255,255,255,.6);padding:6px 12px;opacity:0;transform:translateY(-6px);transition:.4s}
+.card:hover::before{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.intro{display:none}.hero-photo img{clip-path:none}}
