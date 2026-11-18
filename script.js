@@ -27,3 +27,9 @@ const counter = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.6 });
 document.querySelectorAll('[data-count]').forEach((el) => counter.observe(el));
+
+// Subtle parallax on hero photo
+const hp = document.querySelector('.hero-photo img');
+if (hp && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  addEventListener('scroll', () => { if (scrollY < innerHeight) hp.style.transform = `translateY(${scrollY * 0.12}px)`; }, { passive: true });
+}
