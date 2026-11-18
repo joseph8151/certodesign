@@ -187,3 +187,21 @@ footer a:hover{color:var(--fg)}
 .hero-title{font-size:clamp(48px,9vw,150px)}
 .hero-photo{top:12vh;width:min(24vw,340px)}
 @media(max-width:900px){.hero-title{font-size:clamp(44px,12vw,90px)}}
+
+/* FORM */
+.lead{color:var(--mute);margin:-20px 0 56px;position:relative}
+.form{max-width:760px;margin:0 auto;text-align:left;position:relative;display:grid;gap:26px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.form label span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.form input,.form select,.form textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:inherit;font-size:16px;padding:10px 0;border-radius:0;outline:none;transition:border-color .3s}
+.form textarea{resize:vertical}
+.form select option{background:var(--bg2);color:var(--fg)}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--accent)}
+.form ::placeholder{color:#55524d}
+.submit{justify-self:start;margin-top:10px;background:var(--fg);color:var(--bg);border:0;padding:16px 34px;border-radius:99px;font:inherit;font-size:14px;letter-spacing:.06em;cursor:pointer;transition:.3s}
+.submit:hover{background:var(--accent)}
+.submit:disabled{opacity:.5;cursor:wait}
+.status{font-size:14px;min-height:1.5em;color:var(--accent)}
+.status.err{color:#e58a8a}
+.contact-grid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:700px){.form .row{grid-template-columns:1fr}}

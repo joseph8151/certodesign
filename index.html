@@ -160,10 +160,30 @@
 <section class="contact" id="contact">
   <p class="eyebrow reveal">Let's talk</p>
   <h2 class="big reveal">다음 공간을,<br><em>함께 만들어요.</em></h2>
-  <a class="mail reveal" href="mailto:hello@certodesign.com">hello@certodesign.com <span>↗</span></a>
+  <p class="lead reveal">프로젝트 내용을 남겨주시면 영업일 기준 1~2일 내에 연락드립니다.</p>
+
+  <form class="form reveal" id="consult" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div class="row">
+      <label><span>이름 / 브랜드명 *</span><input type="text" name="name" required autocomplete="name"></label>
+      <label><span>연락처 또는 이메일 *</span><input type="text" name="contact" required></label>
+    </div>
+    <div class="row">
+      <label><span>프로젝트 유형</span>
+        <select name="type">
+          <option>팝업스토어</option><option>시즌 설치물 (크리스마스 등)</option><option>브랜드 체험 공간</option>
+          <option>전시 / 이벤트</option><option>VMD / 매장 연출</option><option>기타</option>
+        </select>
+      </label>
+      <label><span>예상 일정 / 예산</span><input type="text" name="schedule_budget" placeholder="예) 3월 오픈, 5천만 원 내외"></label>
+    </div>
+    <label><span>프로젝트 소개 *</span><textarea name="message" rows="5" required placeholder="공간 위치, 규모, 컨셉 등 편하게 적어주세요."></textarea></label>
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+    <button type="submit" class="submit"><span>상담 신청하기</span> <i>→</i></button>
+    <p class="status" role="status" aria-live="polite"></p>
+  </form>
+
   <div class="contact-grid reveal">
     <div><span>Studio</span><p>서울특별시 성동구<br>(주소를 입력하세요)</p></div>
-    <div><span>Phone</span><p>02-000-0000</p></div>
     <div><span>Follow</span><p><a href="#">Instagram</a> · <a href="#">Behance</a></p></div>
   </div>
 </section>
