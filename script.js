@@ -41,7 +41,7 @@ if (form) {
   const btn = form.querySelector('.submit');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (form.action.includes('YOUR_FORM_ID')) {
+    if (form.action.includes('xppddndy')) {
       status.className = 'status err';
       status.textContent = 'Formspree 폼 ID가 아직 설정되지 않았습니다.';
       return;
