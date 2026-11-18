@@ -322,3 +322,13 @@ h2{text-wrap:balance}
 /* CURSOR */
 .cursor{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:60;transform:translate(-50%,-50%);transition:width .25s,height .25s;display:none}
 @media(hover:hover) and (pointer:fine){.cursor{display:block}.cursor.big{width:56px;height:56px}}
+
+/* FOOTER */
+footer{display:block;padding:56px var(--pad) 28px}
+.foot-main{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-brand{font-family:'Instrument Serif',serif;font-size:clamp(40px,6vw,84px);letter-spacing:.2em;line-height:1;color:var(--fg)}
+.foot-brand span{font-size:.2em;vertical-align:super;color:var(--accent)}
+footer address{font-style:normal;font-size:13px;line-height:1.9;color:var(--mute);align-self:flex-end}
+footer address b{color:var(--fg);font-weight:600}
+.foot-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12px;color:var(--mute)}
+@media(max-width:700px){.foot-bottom{flex-direction:column;gap:8px}}
