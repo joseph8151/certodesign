@@ -257,25 +257,73 @@
 <section class="contact" id="contact">
   <p class="eyebrow reveal">Let's talk</p>
   <h2 class="big reveal">다음 공간을,<br><em>함께 만들어요.</em></h2>
-  <p class="lead reveal">프로젝트 내용을 남겨주시면 영업일 기준 1~2일 내에 연락드립니다.</p>
+  <p class="lead reveal">아래 내용을 자세히 남겨주실수록 정확한 제안과 견적이 가능합니다. 영업일 기준 1~2일 내에 연락드립니다.</p>
 
   <form class="form reveal" id="consult" action="https://formspree.io/f/xppddndy" method="POST">
+    <input type="hidden" name="_subject" value="[체르토 디자인] 새 상담 문의">
+
+    <p class="fgroup">01 &mdash; 담당자 정보</p>
     <div class="row">
-      <label><span>이름 / 브랜드명 *</span><input type="text" name="name" required autocomplete="name"></label>
-      <label><span>연락처 또는 이메일 *</span><input type="text" name="contact" required></label>
+      <label><span>이름 *</span><input type="text" name="name" required autocomplete="name" placeholder="담당자 성함"></label>
+      <label><span>브랜드 / 회사명 *</span><input type="text" name="company" required autocomplete="organization" placeholder="브랜드 또는 회사 이름"></label>
     </div>
     <div class="row">
-      <label><span>프로젝트 유형</span>
-        <select name="type">
-          <option>팝업스토어</option><option>시즌 설치물 (크리스마스 등)</option><option>브랜드 체험 공간</option>
-          <option>전시 / 이벤트</option><option>VMD / 매장 연출</option><option>기타</option>
+      <label><span>이메일 *</span><input type="email" name="email" required autocomplete="email" placeholder="name@company.com"></label>
+      <label><span>전화번호 *</span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="010-0000-0000"></label>
+    </div>
+
+    <p class="fgroup">02 &mdash; 프로젝트 정보</p>
+    <div class="row">
+      <label><span>프로젝트 유형 *</span>
+        <select name="type" required>
+          <option value="" disabled selected>선택해 주세요</option>
+          <option>팝업스토어</option><option>시즌 설치물 (크리스마스 등)</option><option>포토존 / 조형물</option>
+          <option>브랜드 체험 공간 / 플래그십</option><option>전시 / 부스</option><option>행사 / 페스티벌</option>
+          <option>VMD / 윈도우 / 매장 연출</option><option>기타</option>
         </select>
       </label>
-      <label><span>예상 일정 / 예산</span><input type="text" name="schedule_budget" placeholder="예) 3월 오픈, 5천만 원 내외"></label>
+      <label><span>공간 위치</span><input type="text" name="location" placeholder="예) 서울 성수동, 더현대 서울 지하 1층"></label>
     </div>
-    <label><span>프로젝트 소개 *</span><textarea name="message" rows="5" required placeholder="공간 위치, 규모, 컨셉 등 편하게 적어주세요."></textarea></label>
+    <div class="row">
+      <label><span>공간 규모</span><input type="text" name="size" placeholder="예) 약 30평 / 100㎡ (미정이면 비워두세요)"></label>
+      <label><span>예산 범위</span>
+        <select name="budget">
+          <option value="">미정 / 상담 후 결정</option>
+          <option>1,000만 원 미만</option><option>1,000만 ~ 3,000만 원</option><option>3,000만 ~ 5,000만 원</option>
+          <option>5,000만 ~ 1억 원</option><option>1억 ~ 3억 원</option><option>3억 원 이상</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label><span>희망 오픈 / 설치일</span><input type="date" name="open_date"></label>
+      <label><span>운영 기간</span><input type="text" name="period" placeholder="예) 2주, 한 달, 연말 시즌 전체"></label>
+    </div>
+
+    <fieldset class="svc">
+      <legend>필요한 서비스 (복수 선택)</legend>
+      <label class="chip"><input type="checkbox" name="services" value="컨셉 기획"><span>컨셉 기획</span></label><label class="chip"><input type="checkbox" name="services" value="공간 디자인"><span>공간 디자인</span></label><label class="chip"><input type="checkbox" name="services" value="그래픽 / 사이니지"><span>그래픽 / 사이니지</span></label><label class="chip"><input type="checkbox" name="services" value="제작"><span>제작</span></label><label class="chip"><input type="checkbox" name="services" value="설치"><span>설치</span></label><label class="chip"><input type="checkbox" name="services" value="운영 지원"><span>운영 지원</span></label><label class="chip"><input type="checkbox" name="services" value="철거 / 폐기"><span>철거 / 폐기</span></label>
+    </fieldset>
+
+    <p class="fgroup">03 &mdash; 프로젝트 소개</p>
+    <label><span>프로젝트 내용 *</span><textarea name="message" rows="6" required placeholder="어떤 브랜드이고 어떤 공간을 만들고 싶으신가요? 컨셉, 타깃, 목표, 원하는 분위기를 자유롭게 적어주세요."></textarea></label>
+    <label><span>참고 자료 링크</span><input type="url" name="reference" placeholder="https://  (노션, 구글 드라이브, 인스타그램, 핀터레스트 등)"></label>
+    <div class="row">
+      <label><span>연락 가능 시간</span>
+        <select name="contact_time">
+          <option value="">상관없음</option><option>오전 (9–12시)</option><option>오후 (12–18시)</option><option>이메일 선호</option>
+        </select>
+      </label>
+      <label><span>체르토를 알게 된 경로</span>
+        <select name="source">
+          <option value="">선택 (선택사항)</option><option>인스타그램</option><option>검색</option><option>지인 소개</option><option>포트폴리오 / 작업물</option><option>기타</option>
+        </select>
+      </label>
+    </div>
+
+    <label class="agree"><input type="checkbox" name="privacy_agree" value="동의" required><span>개인정보 수집·이용에 동의합니다. (수집항목: 이름, 회사명, 이메일, 전화번호, 문의 내용 / 이용목적: 상담 및 견적 안내 / 보관기간: 상담 완료 후 1년)</span></label>
+
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
-    <button type="submit" class="submit"><span>상담 신청하기</span> <i>→</i></button>
+    <button type="submit" class="submit"><span>상담 신청하기</span> <i>&rarr;</i></button>
     <p class="status" role="status" aria-live="polite"></p>
   </form>
 
