@@ -587,3 +587,23 @@ footer{padding-top:80px}
 .agree input{width:18px;height:18px;margin-top:3px;flex:0 0 auto;accent-color:#d9b97f;border:0}
 .agree span{text-transform:none;letter-spacing:0;font-size:12.5px;margin:0;color:var(--mute)}
 .form label span{text-transform:none;letter-spacing:.02em;font-size:12.5px}
+
+/* ===== PHONE / 365 ===== */
+.callstrip{max-width:900px;margin:0 auto 60px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;text-align:left;border:1px solid var(--line);padding:clamp(22px,3vw,38px);position:relative;background:rgba(255,255,255,.03)}
+.cs-text span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.cs-num{display:block;font-family:'Instrument Serif',serif;font-size:clamp(38px,5vw,64px);line-height:1.1;margin:8px 0 6px;letter-spacing:.01em}
+.cs-num:hover{color:var(--accent)}
+.cs-text p{color:var(--mute);font-size:14px}
+.cs-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cs-btn{background:var(--fg);color:var(--bg);padding:16px 30px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:.3s;border:1px solid var(--fg)}
+.cs-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.cs-btn.ghost{background:none;color:var(--fg)}
+.cs-btn.ghost:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.contact-grid{grid-template-columns:repeat(3,1fr)}
+.contact-grid a{border-bottom:1px solid currentColor}
+footer address a{color:var(--fg);border-bottom:1px solid var(--line)}
+.fab{position:fixed;right:22px;bottom:22px;z-index:55;background:#0b1730;color:#f3efe8;padding:14px 20px;display:flex;flex-direction:column;gap:2px;box-shadow:0 14px 40px rgba(10,20,45,.35);transition:transform .3s,background .3s;border:1px solid rgba(217,185,127,.5)}
+.fab span{font-size:10px;letter-spacing:.22em;color:#d9b97f;text-transform:uppercase}
+.fab b{font-family:'Instrument Serif',serif;font-weight:400;font-size:22px;letter-spacing:.02em}
+.fab:hover{transform:translateY(-4px);background:#13244a}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}.callstrip{flex-direction:column;align-items:flex-start}.cs-btns{width:100%}.cs-btn{flex:1;text-align:center}.fab{right:12px;bottom:12px;padding:12px 16px}.fab b{font-size:19px}}
